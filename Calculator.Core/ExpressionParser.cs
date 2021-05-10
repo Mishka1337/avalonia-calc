@@ -59,6 +59,10 @@ namespace Calculator.Core
 
         private Expression FormExpressionFromTokenList(List<Token> tokens)
         {
+            if (tokens.Count == 0)
+            {
+                return null;
+            }
             Dictionary<Token, Expression> tokenToExpressionMap = new Dictionary<Token, Expression>();
             foreach (var token in tokens)
             {
